@@ -15,17 +15,17 @@ range_end = 3000
 #plt.show()
 
 baseline = [
-            3.7714744E-03,
+            3.5170062E-03,
             3.5176045E-03,
             3.4946721E-03,
             3.4389018E-03
            ]
 
-baseline_32 = 
-            [
-                3.5668961E-03,
-                3.4388073E-03
-                3.3372277E-03,
+baseline_32 =  [
+                3.5370062E-03,
+                3.4388073E-03,
+                3.3578466E-03,
+                3.3372277E-03
             ]
 
 
@@ -63,14 +63,23 @@ no_copy = [
             3.4264653E-03,
             3.4140956E-03
           ]
+
+no_copy_32 = [
+            3.4202493E-03,
+            3.3408666E-03,
+            3.3608666E-03,
+            3.3108666E-03
+          ]
 cadences = [25,50,100,200]
 
 plt.plot(cadences,baseline,label="Asynchronous diagnostics")
+plt.plot(cadences,baseline_32,label="Asynchronous diagnostics on 32 nodes")
 plt.plot(cadences,concurrent,label="Synchronous diagnostics")
 plt.plot(cadences,concurrent_32,label="Synchronous diagnostics on 32 nodes")
 plt.plot(cadences,serial,label="Serial diagnostics")
 plt.plot(cadences,serial_32,label="Serial diagnostics on 32 nodes")
 plt.plot(cadences,no_copy,label="Asynchronous reading")
+plt.plot(cadences,no_copy_32,label="Asynchronous reading on 32 nodes")
 plt.legend()
 plt.ylim(ymin=0)
 plt.show()
