@@ -70,9 +70,18 @@ no_copy_32 = [
             3.3608666E-03,
             3.3108666E-03
           ]
+
+async_serial_32 = [
+
+        8.1347234E-03,
+        4.5797523E-03,
+        3.3757528E-03,
+        3.3402205E-03
+        ]
 cadences = [25,50,100,200]
 
 plt.plot(cadences,baseline,label="Asynchronous diagnostics")
+plt.plot(cadences,async_serial_32,label="Asynchronous serial on 32 nodes")
 plt.plot(cadences,baseline_32,label="Asynchronous diagnostics on 32 nodes")
 plt.plot(cadences,concurrent,label="Synchronous diagnostics")
 plt.plot(cadences,concurrent_32,label="Synchronous diagnostics on 32 nodes")
@@ -82,4 +91,5 @@ plt.plot(cadences,no_copy,label="Asynchronous reading")
 plt.plot(cadences,no_copy_32,label="Asynchronous reading on 32 nodes")
 plt.legend()
 plt.ylim(ymin=0)
+plt.savefig("fig.png")
 plt.show()
